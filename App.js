@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View, Platform, TextInput} from 'react-native';
+import {StyleSheet, Text, KeyboardAvoidingView, Platform, TextInput} from 'react-native';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
         <Text style={[styles.largeText, styles.textStyle]}>San Francisco</Text>
         <Text style={[styles.smallText, styles.textStyle]}>Light Cloud</Text>
         <Text style={[styles.largeText, styles.textStyle]}>24°</Text>
@@ -16,7 +16,7 @@ export default class App extends React.Component {
           style={styles.textInput}
           clearButtonMode="always"
         />
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
