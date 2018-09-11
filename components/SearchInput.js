@@ -11,8 +11,18 @@ export default class SearchInput extends React.Component {
   }
 
   handleChangeText = text => {
-    this.setState({ text });
+    this.setState({ text });    
+  };
+
+  handleSubmitEditing = () => {
+    const { onSubmit } = this.props;
+    const { text } = this.state;
+
+    if (!text) return;
+
     console.log(text);
+    onSubmit(text);
+    this.setState({ text: '' });
   };
 
   render() {
@@ -29,6 +39,7 @@ export default class SearchInput extends React.Component {
           style={styles.textInput}
           clearButtonMode="always"
           onChangeText={this.handleChangeText}
+          onSubmitEditing={this.handleSubmitEditing}
         />
       </View>
     );
