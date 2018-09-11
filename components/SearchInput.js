@@ -20,7 +20,6 @@ export default class SearchInput extends React.Component {
 
     if (!text) return;
 
-    console.log(text);
     onSubmit(text);
     this.setState({ text: '' });
   };
