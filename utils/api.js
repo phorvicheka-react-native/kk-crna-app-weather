@@ -35,8 +35,8 @@ function cityUrl(city) {
 export const fetchWeatherByCity = async city => {
   const response = await fetch(cityUrl(city));
   const {name, weather, main} = await response.json();
-  const {description} = weather[0];
+  const {main : weather_group} = weather[0];
   const {temp} = main;
 
-  return {location: name, weather: description, temperature: temp};
+  return {location: name, weather: weather_group, temperature: temp};
 };
